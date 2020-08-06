@@ -33,3 +33,7 @@ def domain_counter(file):
         # Defines our key for sorting which is the clicks count
         for k,v in sorted(domains.items(), key=by_value, reverse=True):
             print(f'{v}\t{k}')
+
+
+if __name__ == '__main__':
+    domain_counter('input.csv')
