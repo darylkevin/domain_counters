@@ -21,3 +21,11 @@ def domain_counter(file):
                 domains[full_domain] = int(count)
             elif full_domain in domains:
                 domains[full_domain] += int(count)
+            # Slice domain names to obtain subdomains
+            for i in range(len(full_domain)):
+                if full_domain[i] == '.':
+                    sub_domain = full_domain[i+1:]
+                    if sub_domain not in domains:
+                        domains[sub_domain] = int(count)
+                    elif sub_domain in domains:
+                        domains[full_domain[i+1:]] += int(count)
