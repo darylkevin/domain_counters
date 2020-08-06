@@ -1,12 +1,14 @@
 import csv
 
-# Dictionary to be used for storing domain names and value pairs 
+# Dictionary to be used for storing domain names and value pairs
 # (number of hits)
 domains = {}
+
 
 # Defines criteria for sorting out dictionary items from highest to lowest
 def by_value(item):
     return item[1]
+
 
 # Main function for sorting out domain hits
 def domain_counter(file):
@@ -31,7 +33,7 @@ def domain_counter(file):
                         domains[full_domain[i+1:]] += int(count)
         # Sorts our output based from highest clicks to lowest
         # Defines our key for sorting which is the clicks count
-        for k,v in sorted(domains.items(), key=by_value, reverse=True):
+        for k, v in sorted(domains.items(), key=by_value, reverse=True):
             print(f'{v}\t{k}')
 
 
