@@ -29,3 +29,7 @@ def domain_counter(file):
                         domains[sub_domain] = int(count)
                     elif sub_domain in domains:
                         domains[full_domain[i+1:]] += int(count)
+        # Sorts our output based from highest clicks to lowest
+        # Defines our key for sorting which is the clicks count
+        for k,v in sorted(domains.items(), key=by_value, reverse=True):
+            print(f'{v}\t{k}')
