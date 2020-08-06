@@ -16,3 +16,8 @@ def domain_counter(file):
         for row in domain_file:
             full_domain = row[1]
             count = row[0]
+            # Adds keys to our domains dictionary
+            if full_domain not in domains:
+                domains[full_domain] = int(count)
+            elif full_domain in domains:
+                domains[full_domain] += int(count)
